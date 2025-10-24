@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Institute Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body class="bg-gradient-to-br from-indigo-600 to-purple-600 min-h-screen flex items-center justify-center">
+    <div class="bg-white bg-opacity-10 backdrop-blur-lg p-8 rounded-2xl shadow-xl w-full max-w-md">
+        <div class="text-center mb-6">
+            <i class="fas fa-keyboard text-5xl text-white mb-3"></i>
+            <h2 class="text-3xl font-bold text-white">Admin Login</h2>
+            <p class="text-gray-200">Enter your 4-digit PIN</p>
+        </div>
+        <div class="mb-4">
+            <label class="block text-white mb-2">Admin PIN</label>
+            <input type="text" id="adminPin" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="****"
+                   class="w-full px-4 py-2 bg-white bg-opacity-20 text-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-white">
+        </div>
+        <button id="loginBtn" class="w-full bg-white text-indigo-600 py-2 px-4 rounded-lg hover:bg-gray-200 transition duration-300 flex items-center justify-center">
+            <i class="fas fa-sign-in-alt mr-2"></i> Login
+        </button>
+    </div>
+    <div id="errorNotification" class="fixed bottom-4 right-4 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg hidden flex items-center">
+        <i class="fas fa-exclamation-circle mr-2"></i>
+        <span id="errorMessage"></span>
+    </div>
+    <script src="firebase-config.js"></script>
+    <script src="utils.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
